@@ -1,0 +1,94 @@
+{
+    "productos":[
+        {"id":1, 
+        "nombre": "Marvel's Spider-Man 2 ",
+        "descripcion":"Fisico",
+        "precio": 17899,  
+        "stock":20, 
+        "img":"ps5.png",
+        "destacado":2, 
+        "marca": "Ps5" },
+        {
+            "id": 2,
+            "nombre": "Final Fantasy VII Rebirth ps5",
+            "descripcion": "Fisico",
+            "precio": 55907,
+            "stock": 27,
+            "img": "81e4WRlYDEL._AC_SX522_.jpg",
+            "destacado": 1,
+            "marca": "Ps5"
+        },
+    
+        {
+            "id": 3,
+            "nombre": "Final Fantasy XVI PS5",
+            "descripcion": "Fisico y Digital",
+            "precio": 88858,
+            "stock": 38,
+            "img": "81T+Q9fgZhL._AC_SX522_.jpg",
+            "destacado": 4,
+            "marca": "Ps5"
+        },
+        {
+            "id": 4,
+            "nombre": "Forspoken -ps5 fisico",
+            "descripcion": "Fisico y Digital",
+            "precio": 43371,
+            "stock": 45,
+            "img": "81V03q2hwHL._AC_SX522_.jpg",
+            "destacado": 3,
+            "marca": "Ps5"
+        },
+        {
+            "id": 5,
+            "nombre": "Meridiem Games Stray",
+            "descripcion": "Fisico",
+            "precio": 80.858,
+            "stock": 1,
+            "img": "717w5ZCykZL._AC_SX522_.jpg",
+            "destacado": 1,
+            "marca": "Ps5"
+        },
+        {
+            "id": 6,
+            "nombre": "Crash Team Racing",
+            "descripcion": "Fisico y Digital",
+            "precio": 50.907,
+            "stock": 10,
+            "img": "D_NQ_NP_603086-MLA40860808775_022020-O.webp",
+            "destacado": 1,
+            "marca": "Nintendo"
+        },
+    
+        {
+            "id": 7,
+            "nombre": "Just Dance 2024 ",
+            "descripcion": "Fisico y Digital",
+            "precio": 58.858,
+            "stock": 100,
+            "img": "71j1Qgzhp7L._AC_SY679_.jpg",
+            "destacado": 1,
+            "marca": "Nintendo"
+        },
+        {
+            "id": 8,
+            "nombre": "Mario+rabbids Kingdom Battle",
+            "descripcion": "Fisico",
+            "precio": 23.371,
+            "stock": 20,
+            "img": "D_NQ_NP_942236-MLA31351970091_072019-O.webp",
+            "destacado": 1,
+            "marca": "Nintendo"
+        }],
+        
+
+        "marcas":[
+            {
+                "marca":"Ps5"
+            },
+            {
+                "marca":"Nintendo"
+        }
+        ]
+}
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final Javascript</title>
+    <!-- Font Awesome 6.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><a href="index.html" ><img src="./img/store.jg__1_-removebg-preview.png" alt="Logo" class="logo"></a></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                <div class="d-flex contenedorNav" role="search">
+                    <div class="input-group contenedorBuscador" >
+
+                        <input type="text" class="form-control" id="buscador" placeholder="¿Qué estás buscando?" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+                        <button class="btn btn-outline-secondary" type="button" id="botonBuscar"> Buscar</button>
+                        
+
+                    </div>
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end subContenedorNav">
+                        <span class="nav-item spanNav">
+
+                          <a type="button" id="boton_registrar" class="nav-link navA" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+                            Registrarse
+                          </a>
+                          <!-- <a class="nav-link navA" id="boton_registrar" >Registrarse</a> -->
+                        </span>
+                        <span class="nav-item spanNav">
+                          <a type="button" id="boton_iniciarSesion" class="nav-link navA" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">
+                            Iniciar Sesión
+                          </a>
+                         
+                        </span>
+                       
+                        <span class="nav-item spanNav">
+                          <span class="col-3 d-flex align-items-center ">
+
+                            <a   
+                                
+                                class="cart position-relative d-inline-flex" 
+                                aria-label="View your shopping cart"
+                                data-bs-toggle="offcanvas" 
+                                data-bs-target="#offcanvasRight" 
+                                aria-controls="offcanvasRight">
+            
+                                <i class="fa-solid fa-cart-shopping position-relative" id="iconoCarrito">
+                                    <span class="position-absolute 
+                                                 top-0 
+                                                 start-100 
+                                                 translate-middle 
+                                                 badge 
+                                                 rounded-pill 
+                                                 bg-danger"
+                                                 
+                                                 id="contadorProducto">
+                                            0
+                                    </span>
+                                </i>
+            
+                            </a>
+            
+                        </span>
+                        </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div>
+      <div class="divAutocomplementado">
+        <div class="absolute">
+          <ul class="hide list-group" id="autocomplementado"></ul>
+        </div>
+      </div>
+      
+      <ul class="hide "id="divOpciones">
+
+        <li><a class="nav-link navA" id="boton_cerrarSesion"></a></li>
+          
+      </ul>
+      
+    </div>
+
+
+    <div  class="text-center my-5" id="prodMostrados"></div>
+
+    <main class="d-flex flex-row">
+      
+        <aside class="col-1 align-flex-start ms-5" id="filtrado">
+            <ul id="ulFiltro">
+            </ul>
+        </aside>
+        <section class="col-11" id="seccionProductos">
+
+          <div class="d-flex row gy-5" id="contenedorProd"></div>
+           
+        </section>
+
+    </main>
+    <div class="offcanvas offcanvas-end carrito" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Carrito</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div  id="seccionCarrito"></div>
+      </div>
+
+      </div>
+    </div>    
+
+
+
+
+
+    <!-- FORMULARIO REGISTRO -->
+
+
+        <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="registro" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="registro">Complete sus datos para el registro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Formulario de Registro -->
+                <div class="" id="divRegistrar" data-bs-backdrop="static">
+                  <form id="formRegistrar">
+                    <label class="form-label" for="nombre_usuario" class="col-form-label">Nombre de usuario:</label>
+                    <input class="form-control" type="text" name="nombre_usuario" id="nombre_usuario_regsitrar">
+
+                    <label class="form-label" for="nombre" class="col-form-label">Nombre:</label>
+                    <input class="form-control"  type="text" name="nombre" id="nombre_registrar">
+
+                    <label class="form-label" for="apellido" class="col-form-label">Apellido:</label>
+                    <input class="form-control" type="text" name="apellido" id="apellido_registrar">
+
+                    <label class="form-label" for="email" class="col-form-label">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email_registrar">
+
+                    <label class="form-label" for="password" class="col-form-label">Contraseña:</label>
+                    <input class="form-control" type="password" name="password" id="password_registrar">
+
+                    <input class="btn btn-dark my-4 submit" type="submit" value="Registrar">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+         <!-- FORMULARIO INICIAR SESION  -->
+
+         <div class="modal fade" id="modalInicioSesion" tabindex="-1" aria-labelledby="inicio_sesion" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="inicio_sesion">Ingrese sus datos para iniciar sesión</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                              <!-- Formulario de Inicio de Sesión -->
+
+                    <div class="" id="divIniciarSesion" data-bs-backdrop="static">
+                      <form id="formIniciarSesion">
+
+                        <label class="form-label" for="nombre_usuario" class="col-form-label">Nombre de usuario:</label>
+                        <input class="form-control" type="text" name="nombre_usuario" id="nombre_usuarioIniciarSesion">
+
+                        <label class="form-label" for="password" class="col-form-label">Contraseña:</label>
+                        <input class="form-control" type="password" name="password" id="passwordIniciarSesion">
+
+                        <input class="btn btn-dark my-4" type="submit" value="Ingresar">
+                      </form>
+                    </div>
+                    
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid bg-dark">
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top">
+            <div class="col mb-3   bg-dark">
+              <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              
+            </div>
+        
+            <div class="col mb-3  bg-dark">
+        
+            </div>
+        
+            <div class="col  bg-dark">
+              <span class="text-muted">© 2024</span>
+             <span>jstore</span>
+            </div>
+        
+            <div class="col mb-3  bg-dark">
+              
+            </div>
+        
+            <div class="col mb-3 bg-dark">
+            </div>
+          </footer>
+        </div>
+
+
+<!-- Sweet Alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+    <script src="./js/clases/producto.js"></script>
+    <script src="./js/clases/usuario.js"></script>
+    <script src="./js/clases/registroUsuario.js"></script>
+    <script src="./js/clases/gestorProductos.js"></script>
+    <script src="./js/main.js"></script>
+  
+</body>
+</html>
+
